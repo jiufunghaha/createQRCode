@@ -7,10 +7,13 @@ import util.qrcode.QRCode;
 public class Main {
 
 	public static void main(String[] args) {
-		boolean[][] array = new QRCode("https://jiufunghaha.github.io/").getQRCodeArray();
-//		QRCodeGUIFrame gui = new QRCodeGUIFrame(array, 20);
-//		gui.setVisible(true);
-		QRCodePicture.getQRCodePicture(array, 20, "E:\\picture\\QRCode.png");
+		String content = "";
+		boolean[][] array = new QRCode(content).getQRCodeArray();
+		//gui方式显示二维码
+		QRCodeGUIFrame gui = new QRCodeGUIFrame(array, 20);
+		gui.setVisible(true);
+		//保存二维码图片
+		QRCodePicture.getQRCodePicture(array, 20, "QRCode.png");
 	}
 
 }
